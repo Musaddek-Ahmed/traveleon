@@ -29,7 +29,7 @@ const Navbar = () => {
         isScrolled ? 'bg-green-100 rounded-lg ' : 'bg-transparent'
       } transition-colors duration-300`}>
         <Link href='/'>
-            <h1 className='text-4xl font-bold text-teal-500'>Travel<span className='text-black'>eon.</span></h1>
+            <h1 className='text-2xl font-bold text-teal-500'>Travel<span className='text-black'>eon.</span></h1>
         </Link>
         <ul className='hidden h-full gap-10 lg:flex '>
             {NAV_LINKS.map((link) => (
