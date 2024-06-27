@@ -1,12 +1,33 @@
-import React from 'react'
+'use client'
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
 import Image from 'next/image'
 import { NAV_LINKS } from '@/constants'
 import Button from './button'
 
 const Navbar = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 0) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
   return (
-    <nav className='flexBetween max-container padding-container relative z-30 py-5'>
+    <nav className={`w-[99%] flexBetween fixed z-50 mx-2 my-2 sm:px-20 px-2  py-3 ${
+        isScrolled ? 'bg-green-100 rounded-lg ' : 'bg-transparent'
+      } transition-colors duration-300`}>
         <Link href='/'>
             <h1 className='text-4xl font-bold text-teal-500'>Travel<span className='text-black'>eon.</span></h1>
         </Link>
