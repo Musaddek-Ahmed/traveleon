@@ -25,8 +25,8 @@ const Navbar = () => {
       };
     }, []);
   return (
-    <nav className={`sm:w-[99%] w-[98%] flexBetween fixed z-50 mx-2 my-2 sm:px-20 px-2  py-3 ${
-        isScrolled ? 'bg-green-100 rounded-lg ' : 'bg-transparent'
+    <nav className={`w-full  flexBetween fixed z-50  sm:px-20 px-0  py-3 ${
+        isScrolled ? 'bg-green-100' : 'bg-transparent'
       } transition-colors duration-300`}>
         <Link href='/'>
             <h1 className='text-2xl font-bold text-teal-500'>Travel<span className='text-black'>eon.</span></h1>
